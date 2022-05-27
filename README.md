@@ -11,4 +11,12 @@ petfinder.com
 XB35rR2jGGGmM0nyfFlpO4cwFMyLlzYtuErImGdDSCtSdNrEuV
 Secret = kMKTb0cYb7J42BlXGZ2Ntko5A2pYRpVEpUyWuAvl
 
-User Stories:
+Acceptance Criteria:
+GIVEN a dog attribute dashboard with form inputs
+WHEN I select an option for size, temperament, cost, and hypoallergenic status
+THEN I am presented with the ideal dog breed for me
+WHEN I accept that dog breed
+THEN I am forwarded to a website with specific doggos in my local market of that breed
+WHEN I don't like the suggested breed
+THEN I am presented with 1-3 comparable breeds
+
