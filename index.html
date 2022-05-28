@@ -11,16 +11,28 @@
     <title>Kevin, Kammin, and Grant's Dog Adoption Optimizer</title>
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <h1>The KKG Dog Finder (because cats suck)</h1>
         <main>
             <ul>
-                <li>Log In</li>
-                <li>Create Account</li>
-                <li>Saved Doggos</li>
+                <!--Maybe I can link to an html form for the create account that will then save their data-->
+                <li><a href="create-account">Create Account</a></li>
+                <!--Same deal here, but a smaller form that can autofill what they've typed in before?-->
+                <li><a href="log-in">Log In</a></li>
+                <!--Link this to a bucket of dogs where people have hit the heart button? Maybe this can be on the side?-->
+                <li><a href="saved-doggos">Saved Doggos</a></li>
             </ul>
         </main>
     </header>
+    <div class="question">
+        <h2>Do You Want A Dog?</h2>
+        
+        <button onclick="show()" id="good_doggo">Yes. Of Course!</button>
+        <img id="myImage" src="good_doggo.jpg" alt="Adorable puppy on beach with scarf">
+
+        <button onclick="window.location='https://media0.giphy.com/media/uhB0n3Eac8ybe/giphy.gif'">Nah. Not Really.</button>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>
+
