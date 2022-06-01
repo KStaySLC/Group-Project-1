@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <h1>The KKG Dog Finder (because cats suck)</h1>
-        <main>
+        <nav>
             <ul>
                 <!--Maybe I can link to an html form for the create account that will then save their data-->
                 <li><a href="create-account">Create Account</a></li>
@@ -22,16 +22,19 @@
                 <!--Link this to a bucket of dogs where people have hit the heart button? Maybe this can be on the side?-->
                 <li><a href="saved-doggos">Saved Doggos</a></li>
             </ul>
-        </main>
+        </nav>
     </header>
-    <div class="question">
-        <h2>Do You Want A Dog?</h2>
+    <main class="test" id="test">
+        <section id="question-container" class="hide">
+            <h2 id="question">Do You Want A Dog?</h2>
+                <div id="answers" class="button-grid">
         
-        <button onclick="show()" id="good_doggo">Yes. Of Course!</button>
-        <img id="myImage" src="assets/images/good doggo.jpg" alt="Adorable puppy on beach with scarf">
+                <button class="button">Yes. Of Course!</button>
 
-        <button onclick="window.location='https://media0.giphy.com/media/uhB0n3Eac8ybe/giphy.gif'">Nah. Not Really.</button>
-    </div>
+                <button onclick="window.location='https://media0.giphy.com/media/uhB0n3Eac8ybe/giphy.gif'">Nah. Not Really.</button>
+                </div>
+        </section>
+    </main>
     
     <script src="./script.js"></script>
 </body>
