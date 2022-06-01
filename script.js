@@ -1,8 +1,32 @@
+var timer = document.getElementById('header1');
+var sec = 45;
+var timerID = setInterval(1000);
+function countDownTimer() {
+    if (sec == -1) {
+        clearTimeout(timerID);
+        // “DO Something this is where the question switches”
+    } else {
+        timer.innerHTML = sec + " seconds remaining!";
+        sec--;
+    }
+}
+var startButton = document.getElementById("start");
+startButton.addEventListener("click", startTimer, countDownTimer);
+var questionsBox = document.getElementById("question-container");
+var questionRandom =
+function startTimer(quiz) {
+    startButton.classList.add("hide");
+    questionRandom = questions.sort(() => Math.random() - .5);
+    currentQuestion = 0
+    questionsBox.classList.remove("hide");
+    nextQuestion();
+}
+
 var germanShepard = {
     size: 
-    temperment:
-    price:
-    hypoallergenic:
+    temperment
+    price
+    hypoallergenic
 }
 
 var labrador = {
