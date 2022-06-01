@@ -10,9 +10,12 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Kevin, Kammin, and Grant's Dog Adoption Optimizer</title>
 </head>
+
 <body>
     <header class="header">
+
         <h1>The KKG Dog Finder (because cats suck)</h1>
+
         <main>
             <ul>
                 <!--Maybe I can link to an html form for the create account that will then save their data-->
@@ -23,18 +26,29 @@
                 <li><a href="saved-doggos">Saved Doggos</a></li>
             </ul>
         </main>
-    </header>
-    <div>
-        <h2>Do You Want A Dog?</h2>
-        <button onclick="window.location='https://www.petfinder.com/'">Yes. Of Course!</button>
 
-        <button onclick="window.location='https://media0.giphy.com/media/uhB0n3Eac8ybe/giphy.gif'">Nah. Not Really.</button>
+    </header>
+
+    <div class="container questions">
+
+        <h2 class="body" id="demo">Do You Want A Dog?</h2>
+
+            <div class="button">
+                <button class="yes" id="yes1"> 
+                     
+               Yes. Of Course! </button>
+
+                <button class="no" id="demo1" 
+                onclick="window.location='https://media0.giphy.com/media/uhB0n3Eac8ybe/giphy.gif'">
+                Nah. Not Really. 
+                </button>
+            </div>
     </div>
 
     <div id="quiz"></div>
     <button id="submit">Submit, Mother F***er!</button>
     <div id="results"></div>
-    
+</div>
     <script src="./script.js"></script>
 </body>
 </html>

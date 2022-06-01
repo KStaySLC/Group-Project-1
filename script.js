@@ -1,3 +1,16 @@
+function hidePage(){
+    for (let i = 0; i < pageArray.length; i++) {
+        if(!pageArray[i].classList.contains('hide')){
+            pageArray[i].classList.add('hide');
+        }
+    }
+}
+yes1.addEventListener('click', hideButton);
+function hideButton() {
+    demo.remove();
+    demo1.remove();
+}
+
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 	function showQuestions(questions, quizContainer){
