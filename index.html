@@ -59,7 +59,7 @@
             <label>Blood Type</label> <br><br>
             <input type="blood-type" name="blood-type" placeholder="Have You Contacted the Red Cross?" class="box"> <br><br>
             <label>Which option best describes why you're looking for a dog?</label> <br><br>
-        </div>
+
         <div id="option1">
             <select>
                 <option name="Select Your Reason That's Probably You Lying To Yourself">Select Your Reason That's Probably You Lying To Yourself</option>
@@ -70,40 +70,37 @@
                 <option value="Other">Other</option>
             </select>
         </div>
-    </div>
-    </form>
-</body>
-    <body>  
-        <div>    
-            <div id="stored-score">Past Score:      
-                <p id ="last-score"></p>    
-            </div>    
-            <div class="container">      
-                <div id="question-container" class="hide">        
-                    <div id="question">Question</div>        
-                    <div id="answer-btns" class="btn-flow">          
-                        <button class="btn" id="btn1" onclick="isCorrect(0)"></button>          
-                        <button class="btn" id="btn2" onclick="isCorrect(1)"></button>          
-                        <button class="btn" id="btn3" onclick="isCorrect(2)"></button>          
-                        <button class="btn" id="btn4" onclick="isCorrect(3)"></button>        
-                    </div>      
-                </div>      
-                <div class="controls">        
-                    <button id="start-btn" class="start-btn btn">Start</button>      
-                </div>      
-                <div id="game-over" class="hide">Game Over!        
-                    <p id="p1"></p>        
-                    <p>Please enter your initials, followed by your score (i.e: KA - 3/5).            
-                        <input type="text" id="name-score">        
-                    </p>        
-                    <p>If you would like to play again, hit refresh!</p>      
-                </div>    
-            </div>    
-            <div id="answer-text" class="hide"></div>    
-            <div id="counter-text"></div>      
+        <br>
+        <label id="head1">What Size Dog Are We Looking For Here?</label><br><br>
+            <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspSmall<br><br>
+            <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspMedium<br><br>
+            <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspLarge<br><br>
+            <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspEnormous, like a horse<br><br>
+        <label>Got Money To Burn?</label><br>
+        <div id="option2">
+            <select>
+                <option name="Select an option">Select an option</option>
+                <option value="Of Course Not">Of Course Not</option>
+                <option value="Yup, as the kids say, I'm Rich AF">Yup, as the kids say, I'm Rich AF</option>
+                <option value="If it Don't Make Dollars">If It Don't Make Dollars</option>
+                <option value="It Don't Make Sense">It Don't Make Sense</option>
+                <option value="You Can't Put a Price on Love">You Can't Put a Price On Love</option>
+            </select>
         </div>
-        <script src="./script.js"></script></body>
-    </body>
+        <br><br>
+        <label id="head2">What About Temperament? (Check all that apply)</label><br>
+        <div id="content2">
+            <input type="checkbox" name="checkbox" class="larger"><label>Friendly</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label>Calm</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label>Shy</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label>Energetic</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label>Protective</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label>Neurotic</label><br><br>
+        </div>
+    </form>
+    <script src="./script.js"></script>
+</body>
+    
 </html>
 
    
