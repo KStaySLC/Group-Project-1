@@ -11,129 +11,100 @@ function hideButton() {
     demo1.remove();
 }
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+var startBtn = document.getElementById("start-btn");
+var questionContainer = document.getElementById("question-container");
+var questionElement = document.getElementById("question");
+var answerBtnElement = document.getElementById("answer-btns");
+var answerText = document.getElementById("answer-text");
+var counterText = document.getElementById("counter-text");
+var counter = 75;
+var id;
+var shuffleQuestions = [];
+var currentQuestionIndex = 0;
+var score =0;
+var gameIsOver = document.getElementById("game-over");
+var nameScore = document.getElementById('name-score');
+var lastScore = document.getElementById('last-score');
+var storedScore = document.getElementById('stored-score');
 
-	function showQuestions(questions, quizContainer){
-        // we'll need a place to store the output and the answer choices
-        var output = [];
-        var answers;
-    
-        // for each question...
-        for(var i=0; i<questions.length; i++){
-            
-            // first reset the list of answers
-            answers = [];
-    
-            // for each available answer to this question...
-            for(letter in questions[i].answers){
-    
-                // ...add an html radio button
-                answers.push(
-                    '<label>'
-                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-                        + letter + ': '
-                        + questions[i].answers[letter]
-                    + '</label>'
-                );
-            }
-    
-            // add this question and its answers to the output
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                + '<div class="answers">' + answers.join('') + '</div>'
-            );
-        }
-    
-        // finally combine our output list into one string of html and put it on the page
-        quizContainer.innerHTML = output.join('');
-    }
-    // show the questions
-	showQuestions(questions, quizContainer);
-
-	function showResults(questions, quizContainer, resultsContainer){
-	
-        // gather answer containers from our quiz
-        var answerContainers = quizContainer.querySelectorAll('.answers');
-        
-        // keep track of user's answers
-        var userAnswer = '';
-        var numCorrect = 0;
-        
-        // for each question...
-        for(var i=0; i<questions.length; i++){
-    
-            // find selected answer
-            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-            
-            // if answer is correct
-            if(userAnswer===questions[i].correctAnswer){
-                // add to the number of correct answers
-                numCorrect++;
-                
-                // color the answers green
-                answerContainers[i].style.color = 'lightgreen';
-            }
-            // if answer is wrong or blank
-            else{
-                // color the answers red
-                answerContainers[i].style.color = 'red';
-            }
-        }
-    
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
-    }
-
-	
-
-	// when user clicks submit, show results
-	submitButton.onclick = function(){
-		showResults(questions, quizContainer, resultsContainer);
-	}
+lastScore.innerText = showScore();
+startBtn.addEventListener('click', beginQuiz)
+nameScore.addEventListener('keypress', function (e) {    
+    if (e.key === 'Enter') {        
+    saveScore()        
+    lastScore.innerText = showScore();        
+    nameScore.value = "";    
+}})
+function beginQuiz() {   
+    startBtn.classList.add('hide');   
+    questionContainer.classList.remove('hide');   
+    shuffleQuestions = questions.sort(() => Math.random() - .5);   
+    setElementInnerText(counterText, counter);   
+    id = setInterval(() => {       
+        decrement();   
+    }, 1000);   
+    showNextQuestion();
 }
-
-var myQuestions = [
-	{
-		question: "What Size Dog Are We Looking For Here",
-		answers: {
-			a: 'Small',
-			b: 'Medium',
-			c: 'Large',
-            d: 'Enormous, like a horse'
-		},
-		correctAnswer: 'c'
-	},
-	{
-		question: "You Got Them Allergies?",
-		answers: {
-			a: 'Yup',
-			b: 'Nope',
-		},
-		correctAnswer: 'b'
-	},
-    {
-		question: "What About Temperament?",
-		answers: {
-			a: 'Calm',
-			b: 'Protective',
-            c: 'Energetic',
-            d: 'Timid'
-		},
-		correctAnswer: 'c'
-	},
-    {
-		question: "Got Money To Burn?",
-		answers: {
-			a: 'Of Course Not',
-			b: 'Rich AF',
-            c: 'Love Matters More Than Money'
-		},
-		correctAnswer: 'a'
-	}
-];
-
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
-
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+function decrement() {    
+    counter--;    
+    var quit = counter <= 0;    
+    setElementInnerText(counterText, quit ? 0 : counter);    
+    if (quit) {        
+        clearInterval(id);        
+        gameOver();    
+    }
+}    
+    function showNextQuestion() {    
+        showQuestion(shuffleQuestions[currentQuestionIndex]);
+    }
+function showQuestion(question) {    
+    questionElement.innerText = question.question;    
+    showOptions(question.answers);
+}
+function showOptions(answers) {    
+    for (var i = 0; i < answers.length; i++) {        
+        var btn = document.getElementById('btn' + (i+1));        
+        btn.innerText = answers[i].text;    
+    }
+}
+function isCorrect(index) {    
+    var isCorrect = shuffleQuestions[currentQuestionIndex].answers[index].correct;    
+    answerText.classList.remove('hide');    
+    setElementInnerText(answerText, isCorrect ? 'Correct!' : 'Wrong!');    
+    if (!isCorrect) {        
+        counter -= 10;        
+        if (counter < 0) {            
+            counter = 0;        
+        }        
+        setElementInnerText(counterText, counter);    
+    } else {        
+        score++;    
+    }
+    setTimeout(() => {        
+        answerText.className = 'hide';    
+    }, 3000);    
+    currentQuestionIndex++;    
+    if (currentQuestionIndex >= shuffleQuestions.length) {        
+        gameOver();    
+    } else {        
+        showNextQuestion();    
+    }
+}
+function setElementInnerText(element, text) {    
+    element.innerText = text;}
+function gameOver() {    
+    startBtn.classList.add('hide');   
+    questionContainer.classList.add('hide');   
+    gameIsOver.classList.remove('hide');   
+    var p1 = document.getElementById("p1");   
+    setElementInnerText(p1, "You scored: " + score + "/5")   
+    clearInterval(id);   
+    counterText.classList.add('hide');
+}
+function saveScore() {    
+    var previousScore = nameScore.value;    
+    localStorage.setItem("name-score", previousScore);
+}
+function showScore() {    
+    var scoreShowed = localStorage.getItem("name-score");    
+    return scoreShowed;}
