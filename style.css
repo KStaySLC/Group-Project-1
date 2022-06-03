@@ -1,8 +1,8 @@
-* {
+/* * {
     box-sizing: border-box;
-  }
+}
   
-  .container {
+.container {
     display: flex;
     flex-direction: column;
     background-color: aqua;
@@ -16,7 +16,7 @@
     align-items: center;
     align-content: center;
   }
-  .button {
+.button {
     display: flex;
     flex-direction: row;
     border-radius: 10px;
@@ -25,22 +25,22 @@
     cursor: pointer;
     font-weight: bold;
     font-size: large;
-  }
+}
   
-  header {
+header {
     padding: 60px;
     text-align: center;
     background: #13293d;
     color: #fff;
-  }
+}
 
-  header main ul {
+header main ul {
     list-style-type: none;
-  }
+ }
 
-  #myImage {
+#myImage {
     display: none;
-  }
+ }
 .hide {
   display: none;
-}
+} */
