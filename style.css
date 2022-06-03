@@ -1,6 +1,11 @@
 * {
     box-sizing: border-box;
   }
+  body {
+    background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+  }
     /* Styling commands to bring buttons and objects to the center of the page.  */
   .container {
     display: flex;
