@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
+    color: whitesmoke;
   }
   body {
     background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-blend-mode: multiply;
   }
   .heading {
     text-align: center;
@@ -35,6 +37,70 @@
     margin-top: 10px;
     padding-bottom: 60px;
   }
+  form .box {
+    width: 98.5%;
+    height: 2.8em;
+    position: relative;
+    bottom: 10px;
+    border: 0;
+    border-radius: 5px;
+  }
+#option1 select {
+  color: black;
+  width: 98.5%;
+  height: 2.7em;
+  position: relative;
+  bottom: 10px;
+  border: 0;
+  border-radius: 5px;
+}
+#option2 select {
+  color: black;
+  width: 98.5%;
+  height: 2.7em;
+  position: relative;
+  top: 10px;
+  border: 0;
+  border-radius: 5px;
+}
+#content2 {
+  margin-top: 10px;
+}
+#option3 select {
+  color: black;
+  width: 98.5%;
+  height: 2.7em;
+  position: relative;
+  bottom: 10px;
+  border: 0;
+  border-radius: 5px;
+}
+.choices {
+  color: black;
+}
+/* Why is the word Submit so low and not centered within the button? */
+button {
+  width: 98.5%;
+  height: 3em;
+  position: relative;
+  top: 10px;
+  background-color: darkred;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+input::placeholder {
+  font-size: 1.1em;
+  position: relative;
+  left: 10px;
+  font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+  form {
+    width: 100%;
+    margin: auto;
+  }
+}
     /* Styling commands to bring buttons and objects to the center of the page.  */
   .container {
     display: flex;
