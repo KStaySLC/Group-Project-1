@@ -6,6 +6,35 @@
     background-size: cover;
     background-attachment: fixed;
   }
+  .heading {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+  }
+  #head {
+    font-size: 1.8em;
+  }
+  #subheading {
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+  #content1 {
+    width: 90%;
+    margin: auto;
+  }
+  form {
+    background-color: rgba(0,0,0,0.7);
+    padding-top: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54%;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    padding-bottom: 60px;
+  }
     /* Styling commands to bring buttons and objects to the center of the page.  */
   .container {
     display: flex;
@@ -57,7 +86,7 @@
   }
   
   .header {
-    height: 50vh;
+    height: 25vh;
     padding: 5px;
     text-align: center;
     background: #13293d;
