@@ -11,7 +11,10 @@
 </head>
 
 <body>
-    <header class="h-28 mx-auto flex justify-center items-center bg-blue-300 text-black border-b-2 border-black">
+    
+
+    <header class="h-28 mx-auto bg-blue-300 text-black border-b-2 border-black">
+        
 
         <h1>The KKG Dog Finder (because cats suck)</h1>
 
@@ -43,12 +46,66 @@
                 </button>
             </div>
     </div>
+<body>
+    <div class="heading">
+        <h1 id="head">Doggo Questionnaire</h1>
+        <h2 id="subheading">Answer these questions, son</h2>
+    </div>
+    <form>
+        <div id="content1">
+            <label>Name</label> <br><br>
+            <input type="name" name="name" placeholder="Tell Us Who You Are!" class="box"> <br><br>
+            <label>Email</label> <br><br>
+            <input type="email" name="email" placeholder="Tell Us How To Reach You!" class="box"> <br><br>
+            <label>Blood Type</label> <br><br>
+            <input type="blood-type" name="blood-type" placeholder="Have You Contacted the Red Cross?" class="box"> <br><br>
+            <label>Which option best describes why you're looking for a dog?</label> <br><br>
+        </div>
+        <div id="option1">
+            <select>
+                <option name="Select Your Reason That's Probably You Lying To Yourself">Select Your Reason That's Probably You Lying To Yourself</option>
+                <option value="Companionship">Companionship</option>
+                <option value="I Am a Giver">I Am a Giver</option>
+                <option value="Home Protection">Home Protection</option>
+                <option value="Retrieve Lost Tennis Balls">Retrieve Lost Tennis Balls</option>
+                <option value="Other">Other</option>
+        </div>
+    </form>
+</body>
+    <body>  
+        <div>    
+            <div id="stored-score">Past Score:      
+                <p id ="last-score"></p>    
+            </div>    
+            <div class="container">      
+                <div id="question-container" class="hide">        
+                    <div id="question">Question</div>        
+                    <div id="answer-btns" class="btn-flow">          
+                        <button class="btn" id="btn1" onclick="isCorrect(0)"></button>          
+                        <button class="btn" id="btn2" onclick="isCorrect(1)"></button>          
+                        <button class="btn" id="btn3" onclick="isCorrect(2)"></button>          
+                        <button class="btn" id="btn4" onclick="isCorrect(3)"></button>        
+                    </div>      
+                </div>      
+                <div class="controls">        
+                    <button id="start-btn" class="start-btn btn">Start</button>      
+                </div>      
+                <div id="game-over" class="hide">Game Over!        
+                    <p id="p1"></p>        
+                    <p>Please enter your initials, followed by your score (i.e: KA - 3/5).            
+                        <input type="text" id="name-score">        
+                    </p>        
+                    <p>If you would like to play again, hit refresh!</p>      
+                </div>    
+            </div>    
+            <div id="answer-text" class="hide"></div>    
+            <div id="counter-text"></div>      
+        </div>
+        <script src="script.js"></script></body>
+      </html>
 
-    <div id="quiz"></div>
-    <button id="submit">Submit, Mother F***er!</button>
-    <div id="results"></div>
+   
 </div>
     <script src="./script.js"></script>
 </body>
 </html>
-
