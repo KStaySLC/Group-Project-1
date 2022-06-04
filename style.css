@@ -1,19 +1,18 @@
 * {
-    box-sizing: border-box;
-    color: whitesmoke;
-  }
-  body {
-    background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-blend-mode: multiply;
-  }
-  .heading {
-    text-align: center;
-    width: 100%;
-    margin: auto;
-    margin-top: 100px;
-  }
+  box-sizing: border-box;
+}
+body {
+  background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+.heading {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+}
 button {
   width: 98.5%;
   height: 3em;
@@ -36,8 +35,9 @@ input::placeholder {
   }
 }
 header main ul {
-    list-style-type: none;
+  list-style-type: none;
 }
+
 .hide {
   display: none;
 }
