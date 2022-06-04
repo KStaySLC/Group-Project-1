@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com" rel="stylesheet"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <title>Kevin, Kammin, and Grant's Dog Adoption Optimizer</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="container h-28 w-auto mx-auto flex-col justify-center items-center bg-blue-300 bg-opacity-75 text-white border-b-2 border-black">
 
-        <h1>The KKG Dog Finder <i>(because cats suck)</i></h1>
-
+        <h1 class="text-3xl">The KKG Dog Finder <i>(because cats suck)</i></h1>
+      
         <main>
             <ul>
                 <!--Maybe I can link to an html form for the create account that will then save their data-->
@@ -27,37 +28,39 @@
 
     </header>
 
-    <div class="container questions">
+    <div class="container w-64 flex-col text-white mx-auto">
 
-        <h2 class="body" id="demo">Do You Want A Dog?</h2>
+        <h2 class="text-2xl justify-self-center items-center" id="demo">Do You Want A Dog?</h2>
 
-            <div class="button">
-                <button class="yes" id="yes1"> 
+            <div>
+                <button class="yes justify-center items-center rounded-2xl bg-gray-400 bg-opacity-75 button hover:bg-blue-300" id="yes1"> 
                      
                Yes. Of Course! </button>
 
-                <button class="no" id="demo1" 
+                <button class="no justify-center items-center rounded-2xl bg-gray-400 bg-opacity-75 button hover:bg-blue-300" id="demo1" 
                 onclick="window.location='https://media0.giphy.com/media/uhB0n3Eac8ybe/giphy.gif'">
                 Nah. Not Really. 
                 </button>
             </div>
     </div>
 <body>
-    <div class="heading">
-        <h1 id="head">Doggo Questionnaire</h1>
-        <h2 id="subheading">Answer these questions, son</h2>
+    <div class="container w-64 mx-auto flex-col justify-center items-center text-white py-5">
+        <p class="text-2xl " id="head">Doggo Questionnaire</p>
+        <p id="subheading">Answer these questions, son</p>
     </div>
-    <form>
+    
+    <form class="container mx-auto flex justify-center items-center rounded-3xl text-white w-8/12 bg-gray-400 bg-opacity-75">
         <div id="content1">
-            <label>Name</label> <br><br>
-            <input type="name" name="name" placeholder="Tell Us Who You Are!" class="box"> <br><br>
-            <label>Email</label> <br><br>
-            <input type="email" name="email" placeholder="Tell Us How To Reach You!" class="box"> <br><br>
-            <label>Blood Type</label> <br><br>
-            <input type="blood-type" name="blood-type" placeholder="Have You Contacted the Red Cross?" class="box choices"> <br><br>
-            <label>Which option best describes why you're looking for a dog?</label> <br><br>
+            <label class="text-2xl pt-5">Name</label> <br><br>
+            <input class="text-black w-5/6 p-2" type="name" name="name" placeholder="Tell Us Who You Are!" class="box"> <br><br>
+            <label class="text-2xl">Email</label> <br><br>
+            <input class="text-black w-5/6 p-2" type="email" name="email" placeholder="Tell Us How To Reach You!" class="box"> <br><br>
+            <label class="text-2xl">Blood Type</label> <br><br>
+            <input class="text-black w-5/6 p-2" type="blood-type" name="blood-type" placeholder="Have You Contacted the Red Cross?" class="box choices"> <br><br>
+            <label class="text-2xl">Which option best describes why you're looking for a dog?</label> <br><br>
 
-        <div id="option1">
+        <div class="text-black">
+
             <select>
                 <option name="Select Your Reason That's Probably You Lying To Yourself">Select Your Reason That's Probably You Lying To Yourself</option>
                 <option value="Companionship" class="choices">Companionship</option>
@@ -68,13 +71,14 @@
             </select>
         </div>
         <br>
-        <label id="head1">What Size Dog Are We Looking For Here?</label><br><br>
+        <label class="text-2xl">What Size Dog Are We Looking For Here?</label><br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspSmall<br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspMedium<br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspLarge<br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspEnormous, like a horse<br><br>
-        <label>Got Money To Burn?</label><br>
-        <div id="option2">
+        <label class="text-2xl">Got Money To Burn?</label><br>
+        <div class="text-black">
+
             <select>
                 <option name="Select an option">Select an option</option>
                 <option value="Of Course Not" class="choices">Of Course Not</option>
@@ -85,29 +89,28 @@
             </select>
         </div>
         <br><br>
-        <label id="head2">What About Temperament? (Check all that apply)</label><br>
-        <div id="content2">
-            <input type="checkbox" name="checkbox" class="larger"><label>Friendly</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label>Calm</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label>Shy</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label>Energetic</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label>Protective</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label>Neurotic</label><br><br>
+        <label class="text-2xl">What About Temperament? (Check all that apply)</label><br>
+        <div>
+            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Friendly</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Calm</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Shy</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Energetic</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Protective</label><br><br>
+            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Neurotic</label><br><br>
         </div>
-        <label id="head2">Do You Need a Hypoallergenic Pooch?</label> <br><br>
-        <div id="option3">
+        <label class="text-2xl">Do You Need a Hypoallergenic Pooch?</label> <br><br>
+        <div class="text-black">
+
             <select>
                 <option name="Select an option">Select one of the two options, Sneezy</option>
                 <option value="Yes" class="choices">Yes</option>
                 <option value="No" class="choices">No</option>
             </select>
         </div>
-        <button><h3>Submit</h3></button>
+
+        <button><h2 class="text-2xl pb-7">Submit</h2></button>
+
     </form>
     <script src="./script.js"></script>
 </body>
 </html>
-
-   
-
-

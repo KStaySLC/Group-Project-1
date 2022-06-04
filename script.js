@@ -1,4 +1,4 @@
-function hidePage(){
+\function hidePage(){
     for (let i = 0; i < pageArray.length; i++) {
         if(!pageArray[i].classList.contains('hide')){
             pageArray[i].classList.add('hide');
