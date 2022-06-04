@@ -1,46 +1,43 @@
-/* * {
+* {
     box-sizing: border-box;
-}
-  
-.container {
-    display: flex;
-    flex-direction: column;
-    background-color: aqua;
-    color: black;
-    font-family: Arial;
-    margin: auto;
-    width: 800px;
-    max-width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
   }
-.button {
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    padding: 5px 10px;
-    background-color: #50abd8;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: large;
-}
-  
-header {
-    padding: 60px;
+  body {
+    background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+  }
+  .heading {
     text-align: center;
-    background: #13293d;
-    color: #fff;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+  }
+button {
+  width: 98.5%;
+  height: 3em;
+  position: relative;
+  top: 10px;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
-
+input::placeholder {
+  font-size: 1.1em;
+  position: relative;
+  left: 10px;
+  font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+  form {
+    width: 100%;
+    margin: auto;
+  }
+}
 header main ul {
     list-style-type: none;
- }
+  }
 
-#myImage {
-    display: none;
- }
 .hide {
   display: none;
-} */
+}
