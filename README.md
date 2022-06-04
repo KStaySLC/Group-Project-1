@@ -1,7 +1,7 @@
 # KKG-Dogs
 Group 4: "As a recently graduated bootcamp student, I now have a job where I can work remote and would like to get a dog as a companion. I want an application to help me narrow my search to find the right dog for me."
 
-CSS not nammed Bootstrap = Material Design
+CSS not nammed Bootstrap = Tailwind CSS
 
 APIs x2:
 thedogapi.com
