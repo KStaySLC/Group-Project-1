@@ -138,4 +138,138 @@ var submitButton = document.getElementById('submit');
 
 generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
-var 
+// var apiKey = 'OKx141pMJXLlcnHxgfs3WsoGod6GWuz2ZRafceTeDjHPsnWLq0'
+// var apiSecret = 'Pi76yQR0TVo10zUX7kgY4aQV4WZ2IcAggPwlssg7'
+// // var submitButton = document.getElementById('submit');
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.getElementById('getToken').addEventListener('click', sendRequest);
+//     sessionStorage.setItem("token", 
+//     JSON.stringify(value));
+// });
+
+// let sendRequest = (ev) => {
+//     var api_url = 'https://api.petfinder.com/v2/oauth2/token';
+
+//     let header = new Headers();
+//     header.append( 'Authentication', 'Bearer ${sessionStorage.getItem("token")}' )
+
+//     let request = new Request(api_url {
+//         type: 'GET',
+//         headers: header
+//     });
+
+// fetch(request)
+//     .then(resp => resp.json())
+//     .then(data => {
+//         console.log(data[0]);
+//     })
+//     .catch(err => {
+//         console.error(err.message);
+//     })
+// }
+
+// var temperament = ''
+// var cost = ''
+// var size = ''
+// var allergies = ''
+// var submit = ''
+
+// var radiocontainer = document.getElementById('radiocontainer')
+// radiocontainer.addEventListener('click', function(e){
+//     console.log(e.target.value)
+//     size = e.target.value
+// })
+// var radio2container = document.getElementById('radio2container')
+// radio2container.addEventListener('click', function(e){
+//     console.log(e.target.value)
+//     temperament = e.target.value
+// }) 
+
+// var submitbutton = document.getElementById('submitbutton')
+// submitbutton.addEventListener('click', function (someEventHere) {
+//     form.elements ['temperament', 'cost', 'size', 'allergies']
+    
+// })
+
+// function gettingInfoFromAllergies() {
+//     let allergies = document.getElementById('allergies');
+//     let allergiesValue = allergies.options[allergies.selectedIndex].value;
+//     console.log(allergiesValue);
+//     return allergiesValue
+// }
+
+// function gettingInfoFromCost () {
+//     let cost = document.getElementById('cost');
+//     let costValue = cost.options[cost.selectedIndex].value;
+//     console.log(costValue);
+//     return costValue
+// }
+
+// These are the functions to request the token, store it, apply it and request a new one when it times out
+// if I can figure out why it won't talk to petfinder. 
+
+var apiKey = 'OKx141pMJXLlcnHxgfs3WsoGod6GWuz2ZRafceTeDjHPsnWLq0'
+var apiSecret = 'Pi76yQR0TVo10zUX7kgY4aQV4WZ2IcAggPwlssg7'
+var token = ''
+var data = ''
+var submitButton = document.getElementById('#submit');
+console.log('made it this far')
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('getToken').addEventListener('click', sendRequest());
+    sessionStorage.setItem("token", data)
+});
+
+var sendRequest = function() {
+   return fetch('https://api.petfinder.com/v2/oauth2/token', {
+       method: 'POST',
+       body: 'grant_type=client_credentials&client_id=' + apiKey + '&client_secret=' + apiSecret,
+    //    headers: {
+    //        'Content-Type' : 'application/x-www-form-urlencoded'
+    //    }
+   }).then(function(resp) {
+       return resp.json();
+
+   }).then(function(data) {
+    console.log('token', data)
+       token = data.access_token;
+       tokenType = data.token_type;
+       expires = new Date().getTime() + (data.expires_in * 1000);
+   }).catch(function (err) {
+       console.log('errors', err);
+   });
+};
+
+// var renewToken = () => {
+//     if (!expires || expires - new Date().getTime() <1) {
+//         sendRequest().then(function() {
+
+//         });
+//     }
+// };
+// var getDogs = function() {
+//     return fetch('https://api.petfinder.com/v2/animals?organization=' + org + '&status=' + status, {
+//         method: 'GET',
+//         headers: {
+//             'Authorization' : 'Bearer' +  token,
+//             'Content-Type' : 'application/x-www-form-urlencoded'
+//         }
+//     }).then(function (resp) {
+//         return resp.json();
+        
+//     }).then(function (data) {
+//         console.log('dogs', data);
+//     }).catch(function(err) {
+//         console.log('errors', err);
+//     });
+// };
+// var makeCall = function () {
+//     if (!expires || expires - new Date().getTime() <1) {
+//         console.log('new call');
+//         sendRequest().then(function() {
+//             getDogs();
+//         });
+//         return;
+//     } 
+//     console.log('from cache');
+//     getDogs();
+// }
