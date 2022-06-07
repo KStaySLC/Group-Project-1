@@ -1,107 +1,43 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  .heading {
-    text-align: center;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(https://www.cutenessoverflow.com/wp-content/uploads/2014/02/Little-Cute-Puppy-1600x1200.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+}
+.heading {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
+}
+button {
+  width: 98.5%;
+  height: 3em;
+  position: relative;
+  top: 10px;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+input::placeholder {
+  font-size: 1.1em;
+  position: relative;
+  left: 10px;
+  font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+  form {
     width: 100%;
     margin: auto;
-    margin-top: 100px;
   }
-  #head {
-    font-size: 1.8em;
-  }
-  #subheading {
-    font-size: 1.1em;
-    margin-top: 10px;
-  }
-  #content1 {
-    width: 90%;
-    margin: auto;
-  }
-  form {
-    background-color: rgba(0,0,0,0.7);
-    padding-top: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54%;
-    border-radius: 5px;
-    margin: auto;
-    margin-top: 10px;
-    padding-bottom: 60px;
-  }
-    /* Styling commands to bring buttons and objects to the center of the page.  */
-  .container {
-    display: flex;
-    flex-direction: column;
-    color: black;
-    font-family: Arial;
-    margin: auto;
-    width: 800px;
-    max-width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-  /* #puppy {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%; */
-  /* }
-  #puppy img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 50%;
-    min-height: 50%;
-  } */
-  .button {
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    padding: 5px 10px;
-    font-weight: bold;
-    font-size: large;
-  }
-  .yes:hover {
-    background-color: #50abd8;
-    border-color: black;
-    cursor: pointer;
-  }
-  .no:hover {
-    background-color: #50abd8;
-    border-color: black;
-    cursor: pointer;
-  }
-  
-  .header {
-    height: 25vh;
-    padding: 5px;
-    text-align: center;
-    background: #13293d;
-    color: #fff;
-    border-radius: 10px;
-    vertical-align: text-top;
-  }
+}
+header main ul {
+  list-style-type: none;
+}
 
-  header main ul {
-    list-style-type: none;
-  }
-
-  #myImage {
-    display: none;
-  }
 .hide {
   display: none;
 }
