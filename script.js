@@ -61,12 +61,14 @@ var makeCall = function () {
         });
         return;
     } 
+
+// Our problem exists below here
     console.log('from cache');
     getDogs();
 }
 // var parameters  = ''
 function getDogs(token, token_type) {
-    fetch(' https://api.petfinder.com/v2/animals?type=dog&size=' + size + '&good_with_children=true&page=2', { 
+    fetch('https://api.petfinder.com/v2/animals?type=dog&size=' + size + '&good_with_children=true&page=2', { 
         method: 'GET',
         headers: {
             'Authorization' : `${token_type} ${token}`,
@@ -102,20 +104,20 @@ radiocontainer.addEventListener('click', function(e){
     
 })
 
-// var radio2container = document.getElementById('radio2container')
-// radio2container.addEventListener('click', function(e){
-//     console.log(e.target.value)
-//     temperament = e.target.value
-//     dog['Temperament'] = temperament
-//     // console.log('temperament')
-//     return dog
-// }) 
-// function gettingInfoFromAllergies() {
-//     let allergies = document.getElementById('allergies');
-//     let allergiesValue = allergies.options[allergies.selectedIndex].value;
-//     console.log(allergiesValue);
-//     return allergiesValue
-// }
+var radio2container = document.getElementById('radio2container')
+radio2container.addEventListener('click', function(e){
+    console.log(e.target.value)
+    temperament = e.target.value
+    dog['Temperament'] = temperament
+    // console.log('temperament')
+    return dog
+}) 
+function gettingInfoFromAllergies() {
+    let allergies = document.getElementById('allergies');
+    let allergiesValue = allergies.options[allergies.selectedIndex].value;
+    console.log(allergiesValue);
+    return allergiesValue
+}
 function gettingInfoFromCost () {
     let cost = document.getElementById('cost');
     let costValue = cost.options[cost.selectedIndex].value;
