@@ -72,17 +72,17 @@
             </select>
         </div>
         <br>
-
-        <label class="text-2xl">What Size Dog Are We Looking For Here?</label><br><br>
+        <div id="radiocontainer">
+        <label id="head1" class="text-2xl">What Size Dog Are We Looking For Here?</label><br><br>
 
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspSmall<br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspMedium<br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspLarge<br><br>
             <input type="radio" name="radio" class="larger">&nbsp&nbsp&nbspEnormous, like a horse<br><br>
-
+        </div>
         <label class="text-2xl">Got Money To Burn?</label><br>
-        <div class="text-black">
-          
+        <div id="question2" class="text-black">
+
             <select>
                 <option name="Select an option">Select an option</option>
                 <option value="Of Course Not" class="choices">Of Course Not</option>
@@ -93,27 +93,24 @@
             </select>
         </div>
         <br><br>
-
-        <label class="text-2xl">What About Temperament? (Check all that apply)</label><br>
-        <div>
-            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Friendly</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Calm</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Shy</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Energetic</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Protective</label><br><br>
-            <input type="checkbox" name="checkbox" class="larger"><label class="pl-5px">Neurotic</label><br><br>
+        <label id="head2" class="text-2xl">What About Temperament? (Check all that apply)</label><br>
+        <div id="radio2container" class="larger">
+            <input type="radio" name="radio2"><label>Friendly</label><br><br>
+            <input type="radio" name="radio2"><label>Calm</label><br><br>
+            <input type="radio" name="radio2"><label>Shy</label><br><br>
+            <input type="radio" name="radio2"><label>Energetic</label><br><br>
+            <input type="radio" name="radio2"><label>Protective</label><br><br>
+            <input type="radio" name="radio2"><label>Neurotic</label><br><br>
         </div>
-        <label class="text-2xl">Do You Need a Hypoallergenic Pooch?</label> <br><br>
-        <div class="text-black">
-
+        <label id="head2" class="text-2xl">Do You Need a Hypoallergenic Pooch?</label> <br><br>
+        <div id="question4" class="text-black">
             <select>
                 <option name="Select an option">Select one of the two options, Sneezy</option>
                 <option class="text-black" value="Yes" class="choices">Yes</option>
                 <option class="text-black" value="No" class="choices">No</option>
             </select>
         </div>
-        <button><h2 class="text-2xl pb-7">Submit</h2></button>
-
+        <button id="submitbutton" type="button"><h3 class="text-2xl pb-7">Submit</h3></button>
     </form>
     <script src="./script.js"></script>
 </body>
