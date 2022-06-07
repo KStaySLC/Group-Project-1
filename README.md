@@ -3,11 +3,11 @@ Group 4: "As a recently graduated bootcamp student, I now have a job where I can
 
 
 Acceptance Criteria:
-WHEN I get to the website
+*WHEN I get to the website
 THEN I'm presented with 4-5 questions
-WHEN I answer NO to said first question
+*WHEN I answer NO to said first question
 THEN I am presented with a gif of the titanic hitting an iceberg
-WHEN I answer YES to the first question  - Do I want a dog?
+*WHEN I answer YES to the first question  - Do I want a dog?
 THEN the remaining questions are presented to me
 WHEN I 
 WHEN I select a answer the next 4 questions concerning size, temperament, cost, and hypoallergenic status
