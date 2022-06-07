@@ -53,9 +53,20 @@ var renewToken = () => {
     }
 };
 
+var makeCall = function () {
+    if (!expires || expires - new Date().getTime() <1) {
+        console.log('new call');
+        sendRequest().then(function() {
+            getDogs();
+        });
+        return;
+    } 
+    console.log('from cache');
+    getDogs();
+}
 // var parameters  = ''
 function getDogs(token, token_type) {
-    fetch(' https://api.petfinder.com/v2/animals?type=dog' + dog + '&page=2&limit=4', { 
+    fetch(' https://api.petfinder.com/v2/animals?type=dog&size=' + size + '&good_with_children=true&page=2', { 
         method: 'GET',
         headers: {
             'Authorization' : `${token_type} ${token}`,
@@ -73,49 +84,45 @@ function getDogs(token, token_type) {
     });
 };
 
-var makeCall = function () {
-    if (!expires || expires - new Date().getTime() <1) {
-        console.log('new call');
-        sendRequest().then(function() {
-            getDogs();
-        });
-        return;
-    } 
-    console.log('from cache');
-    getDogs();
-}
+
 
 let dog = {} 
-
+let size = [];
 var radiocontainer = document.getElementById('radiocontainer')
 radiocontainer.addEventListener('click', function(e){
     console.log(e.target.value)
-    size = e.target.value
-    dog['Size'] = size
-    return dog
+    if (this.checked){
+        size = e.target.value
+        console.log(size)
+    }
+    
+    // dog['Size'] = size
+    // alert('dog')
+    return size
+    
 })
 
-var radio2container = document.getElementById('radio2container')
-radio2container.addEventListener('click', function(e){
-    console.log(e.target.value)
-    temperament = e.target.value
-    dog['Temperament'] = temperament
-    // console.log('temperament')
-    return dog
-}) 
-function gettingInfoFromAllergies() {
-    let allergies = document.getElementById('allergies');
-    let allergiesValue = allergies.options[allergies.selectedIndex].value;
-    console.log(allergiesValue);
-    return allergiesValue
-}
+// var radio2container = document.getElementById('radio2container')
+// radio2container.addEventListener('click', function(e){
+//     console.log(e.target.value)
+//     temperament = e.target.value
+//     dog['Temperament'] = temperament
+//     // console.log('temperament')
+//     return dog
+// }) 
+// function gettingInfoFromAllergies() {
+//     let allergies = document.getElementById('allergies');
+//     let allergiesValue = allergies.options[allergies.selectedIndex].value;
+//     console.log(allergiesValue);
+//     return allergiesValue
+// }
 function gettingInfoFromCost () {
     let cost = document.getElementById('cost');
     let costValue = cost.options[cost.selectedIndex].value;
     console.log(costValue);
     return costValue
 }
-gettingInfoFromCost()
+// gettingInfoFromCost()
 // let submitButton = document.getElementById('submitbutton')
 // getTokenBtn.addEventListener('click', collectedValues)
 
