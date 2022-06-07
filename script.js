@@ -180,11 +180,11 @@ function hideButton() {
 let token;
 let token_type;
 let expires;
-let userChoice = {}
+// let userChoice = {}
 
 let getTokenBtn = document.getElementById('submitbutton');
 getTokenBtn.addEventListener('click', sendRequest);
-alert('button issues')
+
 function sendRequest () {
     let apiKey = 'OKx141pMJXLlcnHxgfs3WsoGod6GWuz2ZRafceTeDjHPsnWLq0'
     let apiSecret = 'Pi76yQR0TVo10zUX7kgY4aQV4WZ2IcAggPwlssg7'
@@ -266,9 +266,22 @@ radio2container.addEventListener('click', function(e){
     console.log(e.target.value)
     temperament = e.target.value
     dog['Temperament'] = temperament
-    console.log('temperament')
+    // console.log('temperament')
     return dog
 }) 
+function gettingInfoFromAllergies() {
+    let allergies = document.getElementById('allergies');
+    let allergiesValue = allergies.options[allergies.selectedIndex].value;
+    console.log(allergiesValue);
+    return allergiesValue
+}
+function gettingInfoFromCost () {
+    let cost = document.getElementById('cost');
+    let costValue = cost.options[cost.selectedIndex].value;
+    console.log(costValue);
+    return costValue
+}
+gettingInfoFromCost()
 // let submitButton = document.getElementById('submitbutton')
 // getTokenBtn.addEventListener('click', collectedValues)
 
