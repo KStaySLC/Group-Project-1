@@ -2,7 +2,6 @@
 Group 4: "As a recently graduated bootcamp student, I now have a job where I can work remote and would like to get a dog as a companion. I want an application to help me narrow my search to find the right dog for me."
 
 
-
 Acceptance Criteria:
 WHEN I get to the website
 THEN I'm presented with 4-5 questions
