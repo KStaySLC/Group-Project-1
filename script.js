@@ -14,6 +14,8 @@ function hideButton() {
 let token;
 let token_type;
 let expires;
+let size = "";
+
 // let userChoice = {}
 
 let getTokenBtn = document.getElementById('submitbutton');
@@ -86,22 +88,13 @@ function getDogs(token, token_type) {
     });
 };
 
-
-
-let dog = {} 
-let size = [];
 var radiocontainer = document.getElementById('radiocontainer')
 radiocontainer.addEventListener('click', function(e){
     console.log(e.target.value)
-    if (this.checked){
-        size = e.target.value
+    if(e.target?.value) {
+        size = e.target?.value
         console.log(size)
-    }
-    
-    // dog['Size'] = size
-    // alert('dog')
-    return size
-    
+    } 
 })
 
 var radio2container = document.getElementById('radio2container')
