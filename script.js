@@ -15,7 +15,18 @@ let token;
 let token_type;
 let expires;
 let size = "";
+let temperament = "";
 
+https://api.petfinder.com/v2/animals?type=dog&size=' + size + '&' + temperament + '=true&page=2'
+
+var radio2container = document.getElementById('radio2container')
+radio2container.addEventListener('click', function(e){
+    console.log(e.target.value)
+    if (e.target?.value) {
+        temperament = e.target?.value
+        console.log(temperament)
+    }
+})
 // let userChoice = {}
 
 let getTokenBtn = document.getElementById('submitbutton');
@@ -83,6 +94,8 @@ function getDogs(token, token_type) {
         
     }).then(function (data) {
         console.log('dogs', data);
+        console.log('dogs', data.animals[0]);
+        console.log('dogs', data.animals[0].url);
     }).catch(function(err) {
         console.log('errors', err);
     });
@@ -123,7 +136,6 @@ function gettingInfoFromCost () {
 
 
 function collectedValues() {
-    
     console.log('dog', dog)
-    
 }
+
